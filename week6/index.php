@@ -20,6 +20,7 @@
   </div>
   
   <?php 
+    include('inc/functions.php');
     require('reusable/con.php');
     $query = 'SELECT * FROM schools';
     $schools = mysqli_query($connect, $query);
@@ -27,9 +28,14 @@
     // echo print_r($schools);
     // echo '</pre>';
   ?>
-
+  
   <div class="container-fluid">
     <div class="container">
+      <div class="row">
+        <div class="col">
+            <?php echo getMessage(); ?>
+        </div>
+      </div>
       <div class="row">
         <?php
           foreach($schools as $school){
